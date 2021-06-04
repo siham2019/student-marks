@@ -14,15 +14,15 @@ namespace student_management_system
 {
     public partial class DashboardAdmin : Form
     {
-        public MySqlConnection con;
-        public MySqlCommand cmd;
-        public MySqlDataReader rdr;
+  
+      
         public string sql;
         public  string count()
         {
 
-             this.cmd = new MySql.Data.MySqlClient.MySqlCommand(this.sql, this.con);
-             var rdr = this.cmd.ExecuteScalar();
+             Form1.cmd = new MySql.Data.MySqlClient.MySqlCommand(this.sql, Form1.con);
+             var rdr = Form1.cmd.ExecuteScalar();
+           
              return Convert.ToInt32(rdr).ToString();
         }
 
@@ -32,37 +32,41 @@ namespace student_management_system
             try
             {
                 InitializeComponent();
-                string cs = @"server=localhost;userid=root;password=;database=marks_students";
-                con = new MySqlConnection(cs);
-                con.Open();
-                  sql = "SELECT count(*) FROM `student`";
+               
+
+                sql = "SELECT count(*) FROM `student`";
                  total_s.Text = count();
-                
+
                  sql = "SELECT count(*) FROM `student` where sex='female'";
                  female_s.Text = count();
+            
 
-                 sql = "SELECT count(*) FROM `student` where sex='male'";
+                sql = "SELECT count(*) FROM `student` where sex='male'";
                  male_s.Text = count();
+            
 
 
 
 
-                 sql = "SELECT count(*) FROM `teacher`";
+                sql = "SELECT count(*) FROM `teacher`";
                  total_t.Text = count();
+               
 
 
-                 sql = "SELECT count(*) FROM `teacher` where sex='female'";
+                sql = "SELECT count(*) FROM `teacher` where sex='female'";
                  female_t.Text = count();
+           
 
-                 sql = "SELECT count(*) FROM `teacher` where sex='male'";
+                sql = "SELECT count(*) FROM `teacher` where sex='male'";
                  male_t.Text = count();
+             
 
 
 
 
 
 
-                 sql = "SELECT count(*) FROM `course`";
+                sql = "SELECT count(*) FROM `course`";
                  total_c.Text = count();
 
                  sql = "SELECT count(*) FROM `level`";
@@ -72,7 +76,7 @@ namespace student_management_system
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.Message);
             }
 
 

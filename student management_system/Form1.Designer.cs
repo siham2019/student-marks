@@ -34,8 +34,6 @@
             this.usetname = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.confirm = new System.Windows.Forms.Button();
-            this.role = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -76,22 +74,6 @@
             this.confirm.Name = "confirm";
             this.confirm.UseVisualStyleBackColor = false;
             this.confirm.Click += new System.EventHandler(this.confirm_Click);
-            // 
-            // role
-            // 
-            resources.ApplyResources(this.role, "role");
-            this.role.FormattingEnabled = true;
-            this.role.Items.AddRange(new object[] {
-            resources.GetString("role.Items"),
-            resources.GetString("role.Items1"),
-            resources.GetString("role.Items2")});
-            this.role.Name = "role";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Name = "label2";
             // 
             // label3
             // 
@@ -136,8 +118,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.role);
             this.Controls.Add(this.confirm);
             this.Controls.Add(this.password);
             this.Controls.Add(this.usetname);
@@ -160,8 +140,6 @@
         private System.Windows.Forms.TextBox usetname;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Button confirm;
-        private System.Windows.Forms.ComboBox role;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;

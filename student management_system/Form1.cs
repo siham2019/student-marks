@@ -13,8 +13,8 @@ namespace student_management_system
 {
     public partial class Form1 : Form
     {
-        public  MySqlConnection con;
-        public  MySqlCommand cmd;
+        public static MySqlConnection con;
+        public static MySqlCommand cmd;
         public  MySqlDataReader rdr;
         public  string sql;
         public Form1()
@@ -34,30 +34,9 @@ namespace student_management_system
 
         }
 
-        bool chooseByRole(){
-            cmd = new MySqlCommand(sql, con);
-
-            cmd.Parameters.AddWithValue("@username", usetname.Text);
-            cmd.Prepare();
-            rdr = cmd.ExecuteReader();
-            if (rdr.HasRows)
-            {
-
-                return true;
-               
-            }
-            else
-            {
-
-                return false;
-
-            }
-
-        }
-
         private void confirm_Click(object sender, EventArgs e)
         {
-            if(usetname.Text!="" && password.Text != "" && role.SelectedIndex!=-1)
+            if(usetname.Text!="" && password.Text != "" )
             {
                 try
                 {
@@ -71,71 +50,39 @@ namespace student_management_system
                     rdr=cmd.ExecuteReader();
                     if (rdr.HasRows)
                     {
-                        rdr.Close();
-
-                        if (role.Text == "teacher")
+                        rdr.Read();
+                        string type = rdr["type"].ToString();
+                        if (type == "teacher")
                         {
-                            sql = "SELECT * FROM `teacher` where username= @username";
-                            if (chooseByRole()) {
-
-                                MessageBox.Show("how nice ^__^ !!");
-                                rdr.Close();
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("verify the role");
-                                rdr.Close();
-
-                            }
-                        }
-                        else if (role.Text == "student")
-                        {
-                            sql = "SELECT * FROM `student` where username= @username";
-                            if (chooseByRole())
-                            {
-
-                                MessageBox.Show("how nice ^__^ !!");
-                                rdr.Close();
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("verify the role");
-                                rdr.Close();
-
-                            }
-
-                        }
-                        else if(role.Text == "admin")
-                        {
-                            sql = "SELECT * FROM `teacher` where username= @username";
-                            bool t=chooseByRole();
                             rdr.Close();
 
-                            sql = "SELECT * FROM `student` where username= @username";
-                            bool s=chooseByRole();
+                            //do somthing
+                        }
+                        else if (type == "student")
+                        {
                             rdr.Close();
 
-                            if (s || t)
-                            {
-                                MessageBox.Show("verify the role");
+                            //do somthing
 
-                            }
-                            else
-                            {
-                                DashboardAdmin d = new DashboardAdmin();
-                                con.Close();
+                        }
+                        else if(type == "admin")
+                        {
+                            rdr.Close();
+
+                            DashboardAdmin d = new DashboardAdmin();
+                             
 
                                 d.Show();
                                 this.Hide();
-                            }
+                 
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("verify your username and password,don't forget to choose role");
+                        rdr.Close();
+
+                        MessageBox.Show("verify your username and password");
                     }
                 }
                 catch (Exception ex)

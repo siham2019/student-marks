@@ -1019,7 +1019,7 @@
     <value>-34, 0</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 451</value>
+    <value>281, 404</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
@@ -1035,7 +1035,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1044,7 +1044,7 @@
     <value>Microsoft Sans Serif, 21.75pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>479, 49</value>
+    <value>479, 86</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 33</value>
@@ -1065,13 +1065,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="usetname.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="usetname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 136</value>
+    <value>377, 169</value>
   </data>
   <data name="usetname.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1092,13 +1092,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;usetname.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="password.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 189</value>
+    <value>377, 222</value>
   </data>
   <data name="password.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1119,7 +1119,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;password.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="confirm.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -1128,7 +1128,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="confirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 258</value>
+    <value>408, 281</value>
   </data>
   <data name="confirm.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 36</value>
@@ -1149,69 +1149,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;confirm.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="role.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="role.Items" xml:space="preserve">
-    <value>admin</value>
-  </data>
-  <data name="role.Items1" xml:space="preserve">
-    <value>teacher</value>
-  </data>
-  <data name="role.Items2" xml:space="preserve">
-    <value>student</value>
-  </data>
-  <data name="role.Location" type="System.Drawing.Point, System.Drawing">
-    <value>572, 397</value>
-  </data>
-  <data name="role.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 28</value>
-  </data>
-  <data name="role.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;role.Name" xml:space="preserve">
-    <value>role</value>
-  </data>
-  <data name="&gt;&gt;role.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;role.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;role.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>603, 374</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 20</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>choose role</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
@@ -1221,7 +1158,7 @@
     <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 136</value>
+    <value>276, 169</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 24</value>
@@ -1251,7 +1188,7 @@
     <value>Microsoft Sans Serif, 14.25pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 189</value>
+    <value>276, 222</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 24</value>
@@ -1310,7 +1247,7 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 30</value>
+    <value>408, 67</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 70</value>
@@ -1367,7 +1304,7 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>470, 82</value>
+    <value>374, 9</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 18</value>
@@ -1397,7 +1334,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>738, 450</value>
+    <value>738, 404</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>student marks management system- login</value>

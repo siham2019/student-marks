@@ -29,23 +29,17 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.username_t = new System.Windows.Forms.TextBox();
+            this.type_t = new System.Windows.Forms.ComboBox();
             this.add = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.password_t = new System.Windows.Forms.TextBox();
             this.update = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,41 +49,31 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.username,
-            this.password,
-            this.type,
-            this.id});
             this.dataGridView1.Location = new System.Drawing.Point(19, 51);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(773, 262);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
-            // textBox1
+            // username_t
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 372);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 26);
-            this.textBox1.TabIndex = 1;
+            this.username_t.Location = new System.Drawing.Point(72, 372);
+            this.username_t.Multiline = true;
+            this.username_t.Name = "username_t";
+            this.username_t.Size = new System.Drawing.Size(218, 26);
+            this.username_t.TabIndex = 1;
             // 
-            // comboBox1
+            // type_t
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(72, 427);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(325, 404);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "id";
+            this.type_t.FormattingEnabled = true;
+            this.type_t.Items.AddRange(new object[] {
+            "student",
+            "teacher",
+            "admin"});
+            this.type_t.Location = new System.Drawing.Point(72, 427);
+            this.type_t.Name = "type_t";
+            this.type_t.Size = new System.Drawing.Size(218, 21);
+            this.type_t.TabIndex = 2;
             // 
             // add
             // 
@@ -103,18 +87,20 @@
             this.add.TabIndex = 4;
             this.add.Text = "add";
             this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // textBox2
+            // password_t
             // 
-            this.textBox2.Location = new System.Drawing.Point(329, 376);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 25);
-            this.textBox2.TabIndex = 5;
+            this.password_t.Location = new System.Drawing.Point(329, 376);
+            this.password_t.Multiline = true;
+            this.password_t.Name = "password_t";
+            this.password_t.Size = new System.Drawing.Size(218, 25);
+            this.password_t.TabIndex = 5;
             // 
             // update
             // 
             this.update.BackColor = System.Drawing.Color.Teal;
+            this.update.Enabled = false;
             this.update.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -124,10 +110,12 @@
             this.update.TabIndex = 6;
             this.update.Text = "update";
             this.update.UseVisualStyleBackColor = false;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // delete
             // 
             this.delete.BackColor = System.Drawing.Color.Teal;
+            this.delete.Enabled = false;
             this.delete.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -137,14 +125,7 @@
             this.delete.TabIndex = 7;
             this.delete.Text = "delete";
             this.delete.UseVisualStyleBackColor = false;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(329, 427);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(218, 21);
-            this.comboBox2.TabIndex = 8;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // groupBox1
             // 
@@ -199,39 +180,6 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "User management";
             // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.MinimumWidth = 115;
-            this.id.Name = "id";
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 115;
-            // 
-            // type
-            // 
-            this.type.HeaderText = "type";
-            this.type.MinimumWidth = 215;
-            this.type.Name = "type";
-            this.type.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.type.Width = 215;
-            // 
-            // password
-            // 
-            this.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.password.HeaderText = "password";
-            this.password.MinimumWidth = 215;
-            this.password.Name = "password";
-            this.password.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.password.Width = 215;
-            // 
-            // username
-            // 
-            this.username.HeaderText = "username";
-            this.username.MinimumWidth = 215;
-            this.username.Name = "username";
-            this.username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.username.Width = 215;
-            // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,11 +191,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.password_t);
+            this.Controls.Add(this.type_t);
+            this.Controls.Add(this.username_t);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "user";
@@ -262,22 +208,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox username_t;
+        private System.Windows.Forms.ComboBox type_t;
         private System.Windows.Forms.Button add;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox password_t;
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }
