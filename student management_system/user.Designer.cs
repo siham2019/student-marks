@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(user));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.username_t = new System.Windows.Forms.TextBox();
             this.type_t = new System.Windows.Forms.ComboBox();
@@ -40,6 +41,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Search = new System.Windows.Forms.Label();
+            this.sea = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,14 +53,15 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 89);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(773, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(773, 224);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // username_t
             // 
+            this.username_t.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.username_t.Location = new System.Drawing.Point(72, 372);
             this.username_t.Multiline = true;
             this.username_t.Name = "username_t";
@@ -91,6 +96,7 @@
             // 
             // password_t
             // 
+            this.password_t.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.password_t.Location = new System.Drawing.Point(329, 376);
             this.password_t.Multiline = true;
             this.password_t.Name = "password_t";
@@ -180,12 +186,50 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "User management";
             // 
+            // Search
+            // 
+            this.Search.AutoSize = true;
+            this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search.Location = new System.Drawing.Point(470, 51);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(68, 20);
+            this.Search.TabIndex = 14;
+            this.Search.Text = "Search :";
+            // 
+            // sea
+            // 
+            this.sea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sea.Location = new System.Drawing.Point(544, 50);
+            this.sea.Multiline = true;
+            this.sea.Name = "sea";
+            this.sea.Size = new System.Drawing.Size(190, 26);
+            this.sea.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Turquoise;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(740, 48);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 28);
+            this.button1.TabIndex = 16;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(816, 510);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sea);
+            this.Controls.Add(this.Search);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -197,6 +241,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "user";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "user";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -219,5 +264,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Search;
+        private System.Windows.Forms.TextBox sea;
+        private System.Windows.Forms.Button button1;
     }
 }

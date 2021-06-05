@@ -91,12 +91,24 @@ namespace student_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
             user u = new user();
-            u.TopLevel = false;
-            panel1.Controls.Add(u);
-            u.Show();
+            show(u);
+        }
 
+        public void show(Form f)
+        {
+            panel1.Controls.Clear();
+
+            f.TopLevel = false;
+            panel1.Controls.Add(f);
+            f.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            teacher t = new teacher();
+            show(t);
         }
     }
 }
+ 

@@ -20,11 +20,12 @@ namespace student_management_system
         public user()
         {
             InitializeComponent();
+            sql = "SELECT * FROM `user`";
             display();
         }
         void display()
         {
-            sql = "SELECT * FROM `user`";
+          
             dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(sql, Form1.con);
             da.Fill(dt);
@@ -69,7 +70,10 @@ namespace student_management_system
                 }
 
             }
+
+            sql = "SELECT * FROM `user`";
             display();
+
             clear();
         }
         void clear()
@@ -122,6 +126,13 @@ namespace student_management_system
             update.Enabled = false;
             delete.Enabled = false;
             clear();
+            sql = "SELECT * FROM `user`";
+            display();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sql = "SELECT * FROM `user` WHERE username LIKE '"+sea.Text+"%'";
             display();
         }
 
@@ -151,6 +162,7 @@ namespace student_management_system
             update.Enabled = false;
             delete.Enabled = false;
             clear();
+            sql = "SELECT * FROM `user`";
             display();
         }
     }
