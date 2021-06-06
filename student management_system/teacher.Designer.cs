@@ -39,7 +39,14 @@
             this.delete = new System.Windows.Forms.Button();
             this.sex = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.image = new System.Windows.Forms.PictureBox();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image1 = new System.Windows.Forms.PictureBox();
             this.upload = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.full_name = new System.Windows.Forms.TextBox();
@@ -55,7 +62,7 @@
             this.username = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -141,6 +148,7 @@
             this.add.TabIndex = 4;
             this.add.Text = "add";
             this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // delete
             // 
@@ -160,9 +168,8 @@
             // 
             this.sex.FormattingEnabled = true;
             this.sex.Items.AddRange(new object[] {
-            "student",
-            "teacher",
-            "admin"});
+            "female",
+            "male"});
             this.sex.Location = new System.Drawing.Point(194, 481);
             this.sex.Name = "sex";
             this.sex.Size = new System.Drawing.Size(218, 21);
@@ -170,22 +177,84 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column7,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.dataGridView1.Location = new System.Drawing.Point(21, 93);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 100;
             this.dataGridView1.Size = new System.Drawing.Size(862, 224);
             this.dataGridView1.TabIndex = 17;
             // 
-            // image
+            // Column7
             // 
-            this.image.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.image.Location = new System.Drawing.Point(21, 350);
-            this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(148, 123);
-            this.image.TabIndex = 28;
-            this.image.TabStop = false;
+            this.Column7.DataPropertyName = "id";
+            this.Column7.HeaderText = "id";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "full_name";
+            this.Column1.HeaderText = "full name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "adress";
+            this.Column2.HeaderText = "adress";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "email";
+            this.Column3.HeaderText = "email";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "n_tel";
+            this.Column4.HeaderText = "number phone";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "sex";
+            this.Column5.HeaderText = "sex";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "username";
+            this.Column6.HeaderText = "username";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // image1
+            // 
+            this.image1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.image1.Location = new System.Drawing.Point(21, 350);
+            this.image1.Name = "image1";
+            this.image1.Size = new System.Drawing.Size(148, 123);
+            this.image1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.image1.TabIndex = 28;
+            this.image1.TabStop = false;
             // 
             // upload
             // 
@@ -199,6 +268,7 @@
             this.upload.TabIndex = 29;
             this.upload.Text = "upload";
             this.upload.UseVisualStyleBackColor = false;
+            this.upload.Click += new System.EventHandler(this.upload_Click);
             // 
             // label3
             // 
@@ -309,10 +379,6 @@
             // username
             // 
             this.username.FormattingEnabled = true;
-            this.username.Items.AddRange(new object[] {
-            "student",
-            "teacher",
-            "admin"});
             this.username.Location = new System.Drawing.Point(437, 481);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(218, 21);
@@ -337,7 +403,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.full_name);
             this.Controls.Add(this.upload);
-            this.Controls.Add(this.image);
+            this.Controls.Add(this.image1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.search_t);
             this.Controls.Add(this.Search);
@@ -349,9 +415,10 @@
             this.Name = "teacher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "teacher";
+            this.Load += new System.EventHandler(this.teacher_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +436,7 @@
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.ComboBox sex;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox image;
+        private System.Windows.Forms.PictureBox image1;
         private System.Windows.Forms.Button upload;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox full_name;
@@ -383,5 +450,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
