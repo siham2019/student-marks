@@ -16,12 +16,12 @@ namespace student_management_system
     {
         DataTable dt = new DataTable();
         public MySqlDataReader rdr;
-
+        int id;
         string sql, text;
-
+        bool yes = true;
         void display()
         {
-
+            yes = false;
             //********************************** datagridview *************************************
             dt = new DataTable();
 
@@ -37,7 +37,7 @@ namespace student_management_system
                 r["picture"] = File.ReadAllBytes(Application.StartupPath + "//image//" +r["image"].ToString());
 
             }
-            dt.Columns.Remove("image");
+            
 
 
             dataGridView1.DataSource = dt;
@@ -45,7 +45,7 @@ namespace student_management_system
             dataGridView1.Columns[2].MinimumWidth = 250;
 
             dataGridView1.Columns[7].MinimumWidth = 100;
-            DataGridViewImageColumn i = (DataGridViewImageColumn)dataGridView1.Columns[7];
+            DataGridViewImageColumn i = (DataGridViewImageColumn)dataGridView1.Columns[8];
             i.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
             // ***************************************** combo box ************************
@@ -135,6 +135,70 @@ namespace student_management_system
                 }
             }
           
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            update.Enabled = true;
+            delete.Enabled = true;
+            add.Enabled = false;
+
+            id = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+            full_name.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            adress.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            email.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            phone.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            sex.SelectedItem = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            username.SelectedItem = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+   
+
+
+
+           image1.Image = new Bitmap(Application.StartupPath + "\\image\\" + dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+         
+           
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                MessageBox.Show(image1.ImageLocation);
+                if (File.Exists(image1.ImageLocation))
+                {
+                    text = image1.ImageLocation;
+                }
+                else
+                {
+                    yes = true;
+                    text = Application.StartupPath + "\\image\\" + Path.GetFileName(image1.ImageLocation);
+                    File.Copy(image1.ImageLocation, text);
+                }
+
+                sql = "UPDATE `teacher` SET `full_name` = '"+full_name.Text+"', `adress` = '"+adress.Text+"', `email` = '"+email.Text+"', `image` = '"+ Path.GetFileName(text) + "', `n_tel` = '"+phone.Text+"', `username` = '"+username.Text+"' WHERE `teacher`.`id` = "+id;
+
+                Form1.cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, Form1.con);
+                Form1.cmd.ExecuteNonQuery();
+                MessageBox.Show("success");
+                add.Enabled = true;
+
+                display();
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.ErrorCode == -2147467259)
+                {
+                    MessageBox.Show("this user is already affect try another one");
+                    if (yes)
+                    {
+                        File.Delete(text);
+                        yes = false;
+                    }
+                }
+            }
         }
 
         public teacher()
