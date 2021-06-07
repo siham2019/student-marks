@@ -60,6 +60,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image1)).BeginInit();
@@ -384,12 +385,21 @@
             this.username.Size = new System.Drawing.Size(218, 21);
             this.username.TabIndex = 40;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(437, 504);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.TabIndex = 42;
+            // 
             // teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(909, 539);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.username);
             this.Controls.Add(this.label7);
@@ -457,5 +467,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -18,8 +18,11 @@ namespace student_management_system
         public MySqlDataReader rdr;
 
         string sql, text;
+
         void display()
         {
+
+            //********************************** datagridview *************************************
             dt = new DataTable();
 
 
@@ -31,7 +34,7 @@ namespace student_management_system
 
             foreach (DataRow r in dt.Rows)
             {
-                r["picture"] = File.ReadAllBytes("//image//"+r["image"].ToString());
+                r["picture"] = File.ReadAllBytes(Application.StartupPath + "//image//" +r["image"].ToString());
 
             }
             dt.Columns.Remove("image");
@@ -44,19 +47,46 @@ namespace student_management_system
             dataGridView1.Columns[7].MinimumWidth = 100;
             DataGridViewImageColumn i = (DataGridViewImageColumn)dataGridView1.Columns[7];
             i.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            // ***************************************** combo box ************************
+
+
+
+
+                sql = "SELECT username FROM `user` WHERE type='teacher'";
+                Form1.cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, Form1.con);
+                rdr = Form1.cmd.ExecuteReader();
+                if (rdr.HasRows)
+                {
+                       while (rdr.Read())
+                       {
+                              username.Items.Add(rdr["username"]);
+                       }
+                }
+               else
+               {
+
+                 add.Enabled = false;
+                 label9.Text ="add new user";
+                 label9.ForeColor = Color.Red;
+
+
+               }
+           
+                rdr.Close();
+
+        
+          
+
+
         }
+
         private void teacher_Load(object sender, EventArgs e)
         {
 
             display();
-            sql = "SELECT user.username FROM `user` INNER JOIN teacher on user.username!=teacher.username WHERE user.type='teacher'";
-            Form1.cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, Form1.con);
-            rdr=Form1.cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                username.Items.Add(rdr["username"]);
-            }
-            rdr.Close();
+           
+
         }
 
         private void upload_Click(object sender, EventArgs e)
@@ -80,7 +110,6 @@ namespace student_management_system
             try
             {
                 text = Application.StartupPath + "\\image\\" + Path.GetFileName(image1.ImageLocation);
-                MessageBox.Show(text);
                 if (File.Exists(text))
                 {
                     MessageBox.Show("the image is already exists");
@@ -95,10 +124,15 @@ namespace student_management_system
                     MessageBox.Show("success");
                    
                 }
+                display();
             }
-            catch (Exception ex)
+              catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex.ErrorCode ==-2147467259)
+                {
+                    MessageBox.Show("this user is already affect try another one");
+                    File.Delete(text);
+                }
             }
           
         }
