@@ -53,7 +53,7 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(81, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(773, 224);
             this.dataGridView1.TabIndex = 0;
@@ -62,7 +62,7 @@
             // username_t
             // 
             this.username_t.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.username_t.Location = new System.Drawing.Point(72, 372);
+            this.username_t.Location = new System.Drawing.Point(134, 372);
             this.username_t.Multiline = true;
             this.username_t.Name = "username_t";
             this.username_t.Size = new System.Drawing.Size(218, 26);
@@ -75,7 +75,7 @@
             "student",
             "teacher",
             "admin"});
-            this.type_t.Location = new System.Drawing.Point(72, 427);
+            this.type_t.Location = new System.Drawing.Point(134, 427);
             this.type_t.Name = "type_t";
             this.type_t.Size = new System.Drawing.Size(218, 21);
             this.type_t.TabIndex = 2;
@@ -97,7 +97,7 @@
             // password_t
             // 
             this.password_t.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.password_t.Location = new System.Drawing.Point(329, 376);
+            this.password_t.Location = new System.Drawing.Point(391, 376);
             this.password_t.Multiline = true;
             this.password_t.Name = "password_t";
             this.password_t.Size = new System.Drawing.Size(218, 25);
@@ -139,7 +139,7 @@
             this.groupBox1.Controls.Add(this.add);
             this.groupBox1.Controls.Add(this.delete);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(572, 319);
+            this.groupBox1.Location = new System.Drawing.Point(634, 319);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(220, 181);
             this.groupBox1.TabIndex = 9;
@@ -150,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 349);
+            this.label2.Location = new System.Drawing.Point(130, 349);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 10;
@@ -160,7 +160,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(325, 353);
+            this.label3.Location = new System.Drawing.Point(387, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 11;
@@ -170,7 +170,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(68, 404);
+            this.label4.Location = new System.Drawing.Point(130, 404);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 20);
             this.label4.TabIndex = 12;
@@ -180,7 +180,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(310, 9);
+            this.label5.Location = new System.Drawing.Point(372, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(210, 29);
             this.label5.TabIndex = 13;
@@ -190,7 +190,7 @@
             // 
             this.Search.AutoSize = true;
             this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search.Location = new System.Drawing.Point(470, 51);
+            this.Search.Location = new System.Drawing.Point(532, 51);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(68, 20);
             this.Search.TabIndex = 14;
@@ -199,7 +199,7 @@
             // sea
             // 
             this.sea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sea.Location = new System.Drawing.Point(544, 50);
+            this.sea.Location = new System.Drawing.Point(606, 50);
             this.sea.Multiline = true;
             this.sea.Name = "sea";
             this.sea.Size = new System.Drawing.Size(190, 26);
@@ -214,7 +214,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(740, 48);
+            this.button1.Location = new System.Drawing.Point(802, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(29, 28);
             this.button1.TabIndex = 16;
@@ -226,7 +226,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(816, 510);
+            this.ClientSize = new System.Drawing.Size(942, 542);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.sea);
             this.Controls.Add(this.Search);

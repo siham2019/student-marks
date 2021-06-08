@@ -27,7 +27,6 @@ namespace student_management_system
             dt = new DataTable();
 
 
-            sql = "SELECT * FROM `teacher`";
 
             MySqlDataAdapter da = new MySqlDataAdapter(sql, Form1.con);
             da.Fill(dt);
@@ -80,6 +79,7 @@ namespace student_management_system
 
         private void teacher_Load(object sender, EventArgs e)
         {
+            sql = "SELECT * FROM `teacher`";
 
             display();
             combo_show();
@@ -107,6 +107,7 @@ namespace student_management_system
 
             try
             {
+
                 text = Application.StartupPath + "\\image\\" + Path.GetFileName(image1.ImageLocation);
                 if (File.Exists(text))
                 {
@@ -122,6 +123,8 @@ namespace student_management_system
                     MessageBox.Show("success");
                    
                 }
+                sql = "SELECT * FROM `teacher`";
+
                 display();
             }
               catch (MySqlException ex)
@@ -202,6 +205,7 @@ namespace student_management_system
                     add.Enabled = true;
                     update.Enabled = false;
                     delete.Enabled = false;
+                    sql = "SELECT * FROM `teacher`";
 
                     display();
                 }
@@ -243,6 +247,8 @@ namespace student_management_system
                 Form1.cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, Form1.con);
                 Form1.cmd.ExecuteNonQuery();
                 MessageBox.Show("success");
+                sql = "SELECT * FROM `teacher`";
+
                 display();
                 clear();
                 //File.Delete(dd);
@@ -254,6 +260,13 @@ namespace student_management_system
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            sql = "SELECT * FROM `teacher` WHERE full_name LIKE '" + search_t.Text + "%'";
+            display();
         }
 
         public teacher()

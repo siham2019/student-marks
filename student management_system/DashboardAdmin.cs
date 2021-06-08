@@ -109,6 +109,12 @@ namespace student_management_system
             teacher t = new teacher();
             show(t);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Student s = new Student();
+            show(s);
+        }
     }
 }
  
