@@ -86,19 +86,23 @@ namespace student_management_system
 
         }
 
-        private void upload_Click(object sender, EventArgs e)
+       public static void upload_image(PictureBox image1)
         {
             OpenFileDialog f = new OpenFileDialog();
             f.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
-       
+
 
             if (f.ShowDialog() == DialogResult.OK)
             {
-                   
-                 image1.Image= new Bitmap(f.FileName);
+
+                image1.Image = new Bitmap(f.FileName);
                 image1.ImageLocation = f.FileName;
             }
+        }
 
+        private void upload_Click(object sender, EventArgs e)
+        {
+            teacher.upload_image(image1);
 
         }
 
