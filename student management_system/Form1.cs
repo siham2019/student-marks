@@ -56,7 +56,12 @@ namespace student_management_system
                         {
                             rdr.Close();
 
-                            //do somthing
+
+                            teacher_dashboard dt = new teacher_dashboard();
+
+
+                            dt.Show();
+                            this.Hide();
                         }
                         else if (type == "student")
                         {
